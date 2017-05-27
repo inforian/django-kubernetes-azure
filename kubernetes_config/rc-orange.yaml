@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ReplicationController
+
+metadata:
+  name: dj-orange
+  labels:
+    name: dj-orange
+
+spec:
+  replicas: 3
+  selector:
+   name: my-dj-app
+  template:
+    metadata:
+      labels:
+        name: my-dj-app
+    spec:
+      containers:
+      - name: dj-orange
+        image: inforian/dj:orange
+        ports:
+        - containerPort: 8000

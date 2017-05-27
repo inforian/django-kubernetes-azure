@@ -1,0 +1,22 @@
+piVersion: v1
+kind: ReplicationController
+
+metadata:
+  name: dj-pink
+  labels:
+    name: dj-pink
+
+spec:
+  replicas: 1
+  selector:
+    name: my-dj-app
+  template:
+    metadata:
+      labels:
+        name: my-dj-app
+    spec:
+      containers:
+      - name: dj-pink
+        image: inforian/dj:pink
+        ports:
+        - containerPort: 8000
