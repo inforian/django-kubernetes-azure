@@ -5,9 +5,9 @@ Django project Deployment on Azure Container Machine using Kubernetes as orchest
 
 - Clone this repo source code :
 
- ```
- https://github.com/inforian/django-kubernetes-azure.git
- ```
+```
+https://github.com/inforian/django-kubernetes-azure.git
+```
  
 - Run python manage.py runserver , and visit Browser you will see pink theme Template.
 
@@ -18,20 +18,19 @@ Django project Deployment on Azure Container Machine using Kubernetes as orchest
 
 - Build docker image for pink theme :
  
-  ```docker
-  docker build -t dj:pink . ## (assuming you are inside django project)
-  ```
+```docker
+docker build -t dj:pink . ## (assuming you are inside django project)
+```
   
 - Now , Build Image for Orange theme BUt before that edit template index.html
   and copy paste below code inside `<head>` tag.
-  
-  ```html
-    <style>
-        #banner {
-            background-color: #ffa500;
-        }
-    </style>
-  ```
+```html
+<style>
+    #banner {
+        background-color: #ffa500;
+    }
+</style>
+```
   
 - Refresh Django dev server url you will see ornage theme.
 - Build image for Orange theme
@@ -40,9 +39,9 @@ docker build -t dj:orange .
 ```
   
 - Check your iamges : 
-  ```docker
-    docker images | grep dj 
-  ```
+```docker
+docker images | grep dj 
+```
   
  - Now Login to you docker hub Account and push this image to docker-hub: 
  ```docker
@@ -63,7 +62,7 @@ docker build -t dj:orange .
   
  - After your Machine is up and Running connect with you `Master VM` via `SSh` 
  
-![master_k8s](https://i.stack.imgur.com/QtWnG.png)
+![master_k8s](https://cloud.githubusercontent.com/assets/2461556/26521392/258f73a6-4305-11e7-915c-9844f7f8b8c9.png)
 
 - Copy files from `kubernetes_config` to `Master VM` 
 
@@ -104,7 +103,7 @@ kubectl create -f rc-orange.yaml
 ```
 
 - Check newly created `RC` and wait for it un-till it is ready with : 
- ```
+```
  kubectl get rc | grep dj-orange
 ```
 
