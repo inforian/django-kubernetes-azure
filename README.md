@@ -1,3 +1,5 @@
+<a href="https://app.codesponsor.io/link/NJ36ZJN5UcFRWGekS9Mu6fcD/inforian/django-kubernetes-azure" rel="nofollow"><img src="https://app.codesponsor.io/embed/NJ36ZJN5UcFRWGekS9Mu6fcD/inforian/django-kubernetes-azure.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
+
 # django-kubernetes-azure
 Django project Deployment on Azure Container Machine using Kubernetes as orchestration Tool.
 
