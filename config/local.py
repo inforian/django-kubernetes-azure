@@ -1,6 +1,7 @@
 """Development settings and globals."""
 
 from .base import *
+import os
 
 # ######### DEBUG CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
@@ -14,7 +15,6 @@ ALLOWED_HOSTS = [
     '*'
 ]
 ########## END SITE CONFIGURATION
-
 
 ########## EMAIL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
@@ -33,6 +33,25 @@ DATABASES = {
     }
 }
 ########## END DATABASE CONFIGURATION
+
+########## TEMPLATE CONFIGURATION 
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+########## END TEMPLATE CONFIGURATION 
 
 
 ########## CACHE CONFIGURATION
