@@ -1,5 +1,5 @@
-piVersion: v1
-kind: ReplicationController
+piVersion: apps/v1
+kind: Deployment
 
 metadata:
   name: dj-pink
